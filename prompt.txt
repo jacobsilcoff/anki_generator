@@ -1,0 +1,20 @@
+Generate flashcards that can be used to study the text below in the form of a question and an answer.
+- The cards should include ALL the key facts in the text (questions should be COMPREHENSIVE)
+- These cards will be used to create an anki deck for a medical student to study.
+- Make sure to generate ALL necessary questions to cover all content in the text.
+- There should be a card for each key idea, and complex ideas should be divided into multiple questions.
+- Questions should be standalone and not require context to understand or answer.
+Output the question on one line, and the answer on the next line. Separate each question and answer with a new line, e.g.:
+"
+...
+Q: What is the most common symptom of aortic dissection?
+A: Pain described as tearing, ripping in chest or back.
+
+Q: What are the labs results in Pericarditis/Pericardial Tamponade?
+A: CBC has ↑WBC, ↑ CRP, ↑ ESR, ↑ Cr, TSH/T4 shows hypothyroidism sometimes
+...
+"
+
+A real output would have many more questions, this is just an example. Make sure to follow this exact format, and output only questions.
+
+Use the entire text below:

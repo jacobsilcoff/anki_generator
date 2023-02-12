@@ -1,0 +1,26 @@
+Shock
+    • Shock is a clinical syndrome define by the effect of reduced perfusion on organ systems due to a decrease in mean arterial pressures
+    • MAP = PDiastolic + 0.3*PPulse
+    • Shock with decreased MAP is from either decreased CO or decreased SVR
+        ◦ MAP = CO * SVR = HR * SV * SV
+        ◦ SV determined by contractility and available blood volume
+        ◦ When compensatory responses cannot sufficiently maintain MAP the body presents with shock
+    • Three main shock syndromes: Hypovolemic, cardiogenic, distributive
+    • The low vascular resistance seen in distributive shock is commonly seen in sepsis but may be mimicked by adrenal crisis or anaphylaxis
+    • Shock can occur when systolic BP is < 90 or the MAP is < 70
+    • Manifestations of inadequate perfusion:
+        ◦ Renal dysfunction (decreased or no urine output)
+        ◦ CNS dysfunction (worsening mental status)
+        ◦ Tissue hypoxia (lactic acidosis)
+History
+    • Usually not helpful due do patient being delirious due to decreased perfusion, but important features:
+        ◦ Recent use/discontinued use of coritcosteroids (adrenal crisis)
+        ◦ Ingestion of certain foods or drugs or the occurrence of bee sting (anaphylaxis)
+        ◦ History of chest pain (pleuritic: PE or tension pneumothorax; nonpleuritic:ischemia)
+        ◦ Recent urinary tract or other infection (sepsis)
+        ◦ Recent bleeding or gastrointestinal volume loss (esophageal varices, cholera)
+Physical Exam
+    • Low BP, compensatory tachycardia
+    • Pulsus paradoxus: cardiac taponade (decrease of systolic BP > 10 mmHg on inspiration)
+    • JVP provides rough estimate of central venous pressure and shock type (table above)
+    • No breath sounds on one side and tracheal deviation on opposite side = tension pneumothorax
