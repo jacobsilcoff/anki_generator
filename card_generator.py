@@ -16,7 +16,7 @@ def generate_flashcards(text):
     completions = openai.Completion.create(
         engine="text-davinci-003",
         prompt=text,
-        max_tokens=4096-len(text),
+        max_tokens=4096 - len(text),
         n=1,
         stop=None,
         temperature=.1,
