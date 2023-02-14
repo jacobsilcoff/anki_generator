@@ -1,5 +1,6 @@
 import openai
 import requests
+import os
 
 
 def read_file(filename):
@@ -9,14 +10,14 @@ def read_file(filename):
 
 openai.api_key = read_file("apikey.txt")
 prompt = read_file("prompt.txt")
-information = read_file("notes.txt")
 
 
-def generate_flashcards(text):
+def generate_flashcards(information):
+    text = prompt + "\n" + information + "\n\n Output:\n"
     completions = openai.Completion.create(
         engine="text-davinci-003",
         prompt=text,
-        max_tokens=4096 - len(text),
+        max_tokens=4096 - int(len(text) / 3),  # this should be fixed
         n=1,
         stop=None,
         temperature=.1,
@@ -33,11 +34,11 @@ def generate_flashcards(text):
     return result
 
 
-def make_card_basic(question, answer):
+def add_card_basic(question, answer, deck_name="AI IM Deck"):
     action = "addNote"
     params = {
         "note": {
-            "deckName": "AI IM Deck",
+            "deckName": deck_name,
             "modelName": "Basic",
             "fields": {
                 "Front": question,
@@ -61,6 +62,22 @@ def make_card_basic(question, answer):
         raise Exception("Failed to add flashcard: " + response.text)
 
 
-flashcards = generate_flashcards(prompt + "\n" + information + "\n\n Output:\n")
-for q, a in flashcards:
-    make_card_basic(q, a)
+def make_cards_from_chunk(filename):
+    directory = "generated_cards"
+    text = ""
+    with open(f"chunks/{filename}.txt") as f:
+        text = f.read()
+    if not text:
+        return
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+    with open(f"{directory}/{filename}_CARDS.txt", "w") as f:
+        cards = generate_flashcards(text)
+        f.write("\n".join([f"Q:{q}\nA:{a}\n" for q, a in cards]))
+
+
+# flashcards = generate_flashcards(prompt + "\n" + information + "\n\n Output:\n")
+# for q, a in flashcards:
+#     make_card_basic(q, a)
+
+make_cards_from_chunk("Asthma")

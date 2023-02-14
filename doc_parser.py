@@ -44,7 +44,7 @@ def get_table_of_contents():
     for pattern, replacement in replacements:
         result = re.sub(pattern, replacement, result)
     result = [x.split("::") for x in result.strip().split("\n")] + [["dummy", str(get_num_pages())]]
-    return [[t1.replace("/", "_"), int(n1) - 1, int(n2) - 1] for [t1, n1], [_, n2] in zip(result, result[1:])]
+    return [[re.sub(r"(/|\s)+", "_", t1), int(n1) - 1, int(n2) - 1] for [t1, n1], [_, n2] in zip(result, result[1:])]
 
 
 def create_chunks():
